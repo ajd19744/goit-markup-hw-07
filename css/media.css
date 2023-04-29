@@ -406,18 +406,19 @@
     padding-bottom: 96px;
   }
   .filters-list {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 24px;   
-    margin-bottom: 64px; 
-    padding: 12px 24px;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-bottom: 64px;
+    max-width: 586px;
   }
 }
 @media screen and (min-width: 1156px) {
   .filters {    
-    padding-top: 96px;
+    padding-top: 100px;
     padding-bottom: 120px;
+  }
+  .filters-list {  
     margin-bottom: 72px;
   }
 }  
