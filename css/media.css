@@ -20,10 +20,6 @@
 
 /*?==========header========= */
 @media screen and (min-width: 768px) {
-  .header-container {    
-    align-items: center;
-    justify-content: center;
-  }
   .header-navigation {
     display: flex;
     align-items: center;
@@ -45,6 +41,9 @@
     color: var(--main-color-text-background, #2e2f42);
     transition: color var(--trancition-hover);
   }
+  .header-link:is(:hover, :focus) {    
+    color: var(--button-touch-color, #404bbf);
+    }
   .active-page {
     color: var(--button-touch-color, #404bbf);
   }
@@ -88,7 +87,6 @@
 }
 
 @media screen and (min-width: 1158px) {
-  
   .header-address-list {
     display: flex;  
     gap: 40px;
@@ -124,8 +122,7 @@
   }
 }
 @media screen and (min-width: 768px) {
-  .hero {
-    padding: 112px 136px;        
+  .hero {     
     font-size: 56px;
     line-height: calc(60 / 56);
     background-image: linear-gradient(
@@ -157,9 +154,12 @@
 }
 @media screen and (min-width: 1158px) {
   .hero { 
-    padding: 188px 315px;   
-    /* max-width: 1440px;
-    min-height: 600px;      */
+    padding-top: 188px;
+    padding-bottom: 188px; 
+    max-width: 1440px;
+    min-height: 600px;
+    margin-left: auto;
+    margin-right: auto;     
   }
   .hero-title {
     margin-bottom: 48px;
@@ -174,9 +174,13 @@
     flex-wrap: wrap;    
     justify-content: center;    
     column-gap: 24px;
+    row-gap: 72px;
   }
   .advantages-item {
     width: calc((100% - 24px) / 2);
+  }
+  .advantages-item:not(:last-child) {
+    margin-bottom: 0;  
   }
   .advantages-title-down {
     text-align: start;    
@@ -244,10 +248,11 @@
     margin-bottom: 0px;         
   }
 } 
-@media screen and (min-width: 768px) {
-  .team {      
-    border: 1px solid #000000;
-  }
+@media screen and (min-width: 768px) { 
+  .team {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  } 
   .team-item{
     margin-bottom: 0px;         
   }
@@ -287,7 +292,9 @@
     flex-basis: calc((100% - 24px * 5) / 6);
   }
 } 
+
 /*? ===========footer=========== */
+
 @media screen and (min-width: 320px) {
   .footer-email-subscribe {    
     width: 288px;
@@ -301,15 +308,18 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    padding-left: 108px;
-    padding-right: 164px;
     padding-top: 96px;
     padding-bottom: 96px;   
   }
+  /* .footer-div {
+    padding-left: 0;
+    padding-right: 0;
+  } */
   .footer-flex {
     display: flex;
     gap: 24px;
     margin-bottom: 72px;
+    margin-left: 92px;
   }
   .footer-container-div {
     margin-left: 0;
@@ -319,13 +329,14 @@
     width: 264px;
   }
   .second-div { 
-    margin-bottom: 0;    
+    margin-bottom: 0;  
+    margin-right: 148px;  
   }
   .footer-text-second {
     text-align: left;
   }
   .footer-form-subscribe { 
-    margin-left: 0;
+    margin-left: 92px;
   }
   .footer-text-subscribe {
     text-align: left;
@@ -335,6 +346,7 @@
     margin-left: 0;
   }
   .subscribe-label {
+    max-width: 452px;
     display: flex;
     gap: 24px;  
   }
@@ -345,6 +357,7 @@
 }
 @media screen and (min-width: 1158px) {
   .footer {
+    max-width: 1440px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 100px;
@@ -354,12 +367,17 @@
     display: flex;
     gap: 80px;
   }
+  .second-div { 
+    margin-right: 0px;  
+  }
   .footer-flex {
     gap: 120px;
     margin-bottom: 0;
+    margin-left: 0;
   }
   .footer-form-subscribe { 
-    margin-left: auto;
+    margin-left: 0;
+    margin-right: auto;
   }
   .footer-email-subscribe {
     width: 264px;
@@ -393,17 +411,7 @@
     align-items: center;
     gap: 24px;   
     margin-bottom: 64px; 
-  }
-  .row-list {
-    display: flex;
-    flex-wrap: wrap;   
-    gap: 24px;
-  }
-  .row-item {
-  width: calc((100% - 24px) / 2); 
-  }  
-  .row-item:not(:last-child) {
-  margin-bottom: 72px;
+    padding: 12px 24px;
   }
 }
 @media screen and (min-width: 1156px) {
@@ -411,6 +419,28 @@
     padding-top: 96px;
     padding-bottom: 120px;
     margin-bottom: 72px;
+  }
+}  
+
+  /*? ===========section row=========== */
+
+@media screen and (min-width: 768px) {
+  .row-list {
+    display: flex;
+    flex-wrap: wrap;   
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .row-item {
+  width: calc((100% - 24px) / 2); 
+  }  
+  .row-item:not(:last-child) {
+  margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1156px) {
+  .row-list {
+    row-gap: 48px;
   }
   .row-item {
     width: calc((100% - 48px) / 3);
